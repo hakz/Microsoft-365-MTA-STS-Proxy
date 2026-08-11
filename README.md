@@ -1,15 +1,15 @@
 # MTA-STS proxy
 
 > [!NOTE]
-> This was forked from the original [Cloudflare Email Service MTA-STS Proxy](https://github.com/cloudflare/docs-examples/tree/main/workers/mta-sts-proxy) to support Google Workspace.
+> This was forked from the original [Cloudflare Email Service MTA-STS Proxy](https://github.com/cloudflare/docs-examples/tree/main/workers/mta-sts-proxy) to support Microsoft 365.
 
-A Cloudflare Worker that proxies the Google Workspace Email Service [MTA-STS](https://datatracker.ietf.org/doc/html/rfc8461) policy file so it can be served from your own domain under the well-known URI:
+A Cloudflare Worker that proxies the Microsoft Outlook Email Service [MTA-STS](https://datatracker.ietf.org/doc/html/rfc8461) policy file so it can be served from your own domain under the well-known URI:
 
 ```
 https://mta-sts.<your-domain>/.well-known/mta-sts.txt
 ```
 
-The Worker fetches `https://mta-sts.google.com/.well-known/mta-sts.txt` and returns it unchanged.
+The Worker fetches [https://mta-sts.microsoft.com/.well-known/mta-sts.txt](https://mta-sts.microsoft.com/.well-known/mta-sts.txt) and returns it unchanged.
 
 ## Usage
 

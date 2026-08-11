@@ -132,7 +132,6 @@ dist
 # vuepress v2.x temp and cache directory
 
 .temp
-.cache
 
 # Docusaurus cache and generated files
 
@@ -170,3 +169,13 @@ dist
 
 .dev.vars
 .wrangler/
+
+# idea
+.idea
+.idea/
+.idea/*
+/.idea
+/.idea/
+/.idea/*
+/worker-configuration.d.ts
+worker-configuration.d.ts

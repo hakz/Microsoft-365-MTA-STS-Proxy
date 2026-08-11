@@ -7,8 +7,13 @@ describe("mta-sts-proxy", () => {
 		vi.restoreAllMocks();
 	});
 
-	it("proxies the Google Workspace MTA-STS policy file", async () => {
-		const policy = "version: STSv1\nmode: enforce\nmx: smtp.google.com\nmx: aspmx.l.google.com\nmx: *.aspmx.l.google.com\nmax_age: 86400";
+	// version: STSv1
+	// mode: enforce
+	// mx: *.mail.protection.outlook.com
+	// max_age: 604800
+
+	it("proxies the Microsoft 365 MTA-STS policy file", async () => {
+		const policy = "version: STSv1\nmode: enforce\nmx: *.mail.protection.outlook.com\nmax_age: 604800";
 		const fetchSpy = vi
 			.spyOn(globalThis, "fetch")
 			.mockResolvedValue(new Response(policy));
@@ -19,7 +24,7 @@ describe("mta-sts-proxy", () => {
 		await waitOnExecutionContext(ctx);
 
 		expect(fetchSpy).toHaveBeenCalledWith(
-			"https://mta-sts.google.com/.well-known/mta-sts.txt",
+			"https://mta-sts.microsoft.com/.well-known/mta-sts.txt",
 		);
 		expect(await response.text()).toBe(policy);
 	});

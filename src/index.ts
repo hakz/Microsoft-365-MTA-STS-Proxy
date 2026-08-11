@@ -5,7 +5,7 @@
 // that `https://mta-sts.<your-domain>/.well-known/mta-sts.txt` resolves.
 //
 // Docs: https://developers.cloudflare.com/email-service/configuration/mta-sts/
-const POLICY_URL = "https://mta-sts.google.com/.well-known/mta-sts.txt";
+const POLICY_URL = "https://mta-sts.microsoft.com/.well-known/mta-sts.txt";
 
 export default {
 	async fetch(request, env, ctx): Promise<Response> {
